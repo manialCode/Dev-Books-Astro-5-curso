@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 
 const books = await getCollection("books");
+export const prerender = true;
 // books[0].slug;( para quitar la extension del archivo, para url por ejemplo)
 ---
 
@@ -13,14 +14,14 @@ const books = await getCollection("books");
 
   <section aria-label="Libros recomendados para programadores">
     <div class="px-4 mx-auto max-w-screen-xl">
-      <div class="gird gap-6 grid-cols-2">
+      <div class="grid gap-6 md:grid-cols-2">
         {
           books.map((book) => {
             const { slug, data } = book;
             const { title, author, img, readtime, description } = data;
 
             return (
-              <article class="flex">
+              <article class="flex my-4 bg-gray-800/50 p-4 rounded shadow-lg">
                 <a
                   href={`/libro/${slug}`}
                   class="mb-2 xl:mb-0 transition hover:scale-110"
@@ -32,7 +33,7 @@ const books = await getCollection("books");
                     alt={title}
                   />
                 </a>
-                <div class="flex flex-col justify-center">
+                <div class="content flex flex-col justify-center">
                   <h2
                     transition:name={`title-${slug}`}
                     class="mb-2 text-2xl font-bold leading-tight text-white"
@@ -51,3 +52,5 @@ const books = await getCollection("books");
     </div>
   </section>
 </Layout>
+
+<style></style>

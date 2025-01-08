@@ -21,7 +21,7 @@ const { title, author, buy, description, img, readtime } = data;
 const { Content } = await render(book);
 ---
 
-<Layout title="">
+<Layout title={title + author}>
   <div class="flex gap-12">
     <aside class="flex flex-col items-center gap-4">
       <a href="/" class="hover:underline opacity-70">⬅️Back to home</a>
