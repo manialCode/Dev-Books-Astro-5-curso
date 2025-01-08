@@ -1,10 +1,10 @@
-import { B as ROUTE_TYPE_HEADER, C as REROUTE_DIRECTIVE_HEADER, A as AstroError, G as i18nNoLocaleFoundInPath, H as ResponseSentError, J as bold, K as red, O as yellow, P as dim, Q as blue, S as MiddlewareNoDataOrNextCalled, T as MiddlewareNotAResponse, V as RewriteWithBodyUsed, W as originPathnameSymbol, X as GetStaticPathsRequired, Y as InvalidGetStaticPathsReturn, Z as InvalidGetStaticPathsEntry, _ as GetStaticPathsExpectedParams, $ as GetStaticPathsInvalidRouteParam, a0 as PageNumberParamNotFound, a1 as decryptString, a2 as createSlotValueFromString, a3 as isAstroComponentFactory, r as renderTemplate, a as renderComponent, D as DEFAULT_404_COMPONENT, a4 as NoMatchingStaticPathFound, a5 as PrerenderDynamicEndpointPathCollide, a6 as ReservedSlotName, a7 as renderSlotToString, a8 as renderJSX, a9 as chunkToString, aa as isRenderInstruction, ab as ForbiddenRewrite, ac as SessionStorageSaveError, ad as SessionStorageInitError, ae as LocalsReassigned, af as AstroResponseHeadersReassigned, ag as PrerenderClientAddressNotAvailable, ah as clientAddressSymbol, ai as ClientAddressNotAvailable, aj as StaticClientAddressNotAvailable, ak as ASTRO_VERSION, al as responseSentSymbol$1, am as renderPage, an as REWRITE_DIRECTIVE_HEADER_KEY, ao as REWRITE_DIRECTIVE_HEADER_VALUE, ap as renderEndpoint, aq as LocalsNotAnObject, ar as REROUTABLE_STATUS_CODES, as as commonjsGlobal } from './astro/server_BLDN4tx6.mjs';
-import { c as cookieExports, g as getActionQueryString, d as deserializeActionResult, D as DEFAULT_404_ROUTE, a as default404Instance, N as NOOP_MIDDLEWARE_FN, e as ensure404Route } from './astro-designed-error-pages_CffzWq_v.mjs';
+import { B as ROUTE_TYPE_HEADER, C as REROUTE_DIRECTIVE_HEADER, A as AstroError, G as i18nNoLocaleFoundInPath, H as ResponseSentError, J as bold, K as red, O as yellow, P as dim, Q as blue, S as MiddlewareNoDataOrNextCalled, T as MiddlewareNotAResponse, V as RewriteWithBodyUsed, W as originPathnameSymbol, X as GetStaticPathsRequired, Y as InvalidGetStaticPathsReturn, Z as InvalidGetStaticPathsEntry, _ as GetStaticPathsExpectedParams, $ as GetStaticPathsInvalidRouteParam, a0 as PageNumberParamNotFound, a1 as decryptString, a2 as createSlotValueFromString, a3 as isAstroComponentFactory, r as renderTemplate, a as renderComponent, D as DEFAULT_404_COMPONENT, a4 as NoMatchingStaticPathFound, a5 as PrerenderDynamicEndpointPathCollide, a6 as ReservedSlotName, a7 as renderSlotToString, a8 as renderJSX, a9 as chunkToString, aa as isRenderInstruction, ab as ForbiddenRewrite, ac as SessionStorageSaveError, ad as SessionStorageInitError, ae as LocalsReassigned, af as AstroResponseHeadersReassigned, ag as PrerenderClientAddressNotAvailable, ah as clientAddressSymbol, ai as ClientAddressNotAvailable, aj as StaticClientAddressNotAvailable, ak as ASTRO_VERSION, al as responseSentSymbol$1, am as renderPage, an as REWRITE_DIRECTIVE_HEADER_KEY, ao as REWRITE_DIRECTIVE_HEADER_VALUE, ap as renderEndpoint, aq as LocalsNotAnObject, ar as REROUTABLE_STATUS_CODES, as as commonjsGlobal } from './astro/server_DB_Sk72R.mjs';
+import { c as cookieExports, g as getActionQueryString, d as deserializeActionResult, D as DEFAULT_404_ROUTE, a as default404Instance, N as NOOP_MIDDLEWARE_FN, e as ensure404Route } from './astro-designed-error-pages_CmOdAJeB.mjs';
 import buffer from 'node:buffer';
 import crypto$1 from 'node:crypto';
 import { Http2ServerResponse } from 'node:http2';
 import { a as appendForwardSlash, j as joinPaths, b as removeTrailingForwardSlash, t as trimSlashes, f as fileExtension, s as slash, p as prependForwardSlash } from './path_I7weJv-K.mjs';
-import { U as UNDEFINED, N as NAN, P as POSITIVE_INFINITY, a as NEGATIVE_INFINITY, b as NEGATIVE_ZERO, e as encode64, H as HOLE, u as unflatten } from './parse_BxWlCxqB.mjs';
+import { U as UNDEFINED, N as NAN, P as POSITIVE_INFINITY, a as NEGATIVE_INFINITY, b as NEGATIVE_ZERO, e as encode64, H as HOLE, u as unflatten$1 } from './parse_BxWlCxqB.mjs';
 import { a as setGetEnv } from './runtime_BaX0UJyD.mjs';
 import require$$1 from 'os';
 import require$$0 from 'path';
@@ -745,7 +745,7 @@ function stringify_key(key) {
  * @param {any} value
  * @param {Record<string, (value: any) => any>} [reducers]
  */
-function stringify$2(value, reducers) {
+function stringify$3(value, reducers) {
 	/** @type {any[]} */
 	const stringified = [];
 
@@ -754,7 +754,7 @@ function stringify$2(value, reducers) {
 
 	/** @type {Array<{ key: string, fn: (value: any) => any }>} */
 	const custom = [];
-	if (reducers) {
+	{
 		for (const key of Object.getOwnPropertyNames(reducers)) {
 			custom.push({ key, fn: reducers[key] });
 		}
@@ -1566,6 +1566,7 @@ function createEndpoint(manifest) {
     for (const prop in data.slots) {
       slots[prop] = createSlotValueFromString(data.slots[prop]);
     }
+    result.response.headers.set("X-Robots-Tag", "noindex");
     if (isAstroComponentFactory(Component)) {
       const ServerIsland = Component;
       Component = function(...args) {
@@ -1718,7 +1719,6 @@ async function getProps(opts) {
     ssr: serverLike,
     base
   });
-  if (!staticPaths.length) return {};
   const params = getParams(route, decodeURI(pathname));
   const matchedStaticPath = findPathItemByKey(staticPaths, params, route, logger);
   if (!matchedStaticPath && (serverLike ? route.prerender : true)) {
@@ -1991,7 +1991,7 @@ function isPureObject(value) {
   const proto = Object.getPrototypeOf(value);
   return !proto || proto.isPrototypeOf(Object);
 }
-function stringify$1(value) {
+function stringify$2(value) {
   if (isPrimitive(value)) {
     return String(value);
   }
@@ -1999,7 +1999,7 @@ function stringify$1(value) {
     return JSON.stringify(value);
   }
   if (typeof value.toJSON === "function") {
-    return stringify$1(value.toJSON());
+    return stringify$2(value.toJSON());
   }
   throw new Error("[unstorage] Cannot stringify value!");
 }
@@ -2248,7 +2248,7 @@ function createStorage(options = {}) {
       if (!driver.setItem) {
         return;
       }
-      await asyncCall(driver.setItem, relativeKey, stringify$1(value), opts);
+      await asyncCall(driver.setItem, relativeKey, stringify$2(value), opts);
       if (!driver.watch) {
         onChange("update", key);
       }
@@ -2260,7 +2260,7 @@ function createStorage(options = {}) {
             batch.driver.setItems,
             batch.items.map((item) => ({
               key: item.relativeKey,
-              value: stringify$1(item.value),
+              value: stringify$2(item.value),
               options: item.options
             })),
             commonOptions
@@ -2274,7 +2274,7 @@ function createStorage(options = {}) {
             return asyncCall(
               batch.driver.setItem,
               item.relativeKey,
-              stringify$1(item.value),
+              stringify$2(item.value),
               item.options
             );
           })
@@ -2539,6 +2539,17 @@ const builtinDrivers = {
 const PERSIST_SYMBOL = Symbol();
 const DEFAULT_COOKIE_NAME = "astro-session";
 const VALID_COOKIE_REGEX = /^[\w-]+$/;
+const unflatten = (parsed, _) => {
+  return unflatten$1(parsed, {
+    URL: (href) => new URL(href)
+  });
+};
+const stringify$1 = (data, _) => {
+  return stringify$3(data, {
+    // Support URL objects
+    URL: (val) => val instanceof URL && val.href
+  });
+};
 class AstroSession {
   // The cookies object.
   #cookies;
@@ -2639,8 +2650,9 @@ class AstroSession {
         message: "The session key was not provided."
       });
     }
+    let cloned;
     try {
-      stringify$2(value);
+      cloned = unflatten(JSON.parse(stringify$1(value)));
     } catch (err) {
       throw new AstroError(
         {
@@ -2659,7 +2671,7 @@ class AstroSession {
     const lifetime = ttl ?? this.#config.ttl;
     const expires = typeof lifetime === "number" ? Date.now() + lifetime * 1e3 : lifetime;
     this.#data.set(key, {
-      data: value,
+      data: cloned,
       expires
     });
     this.#dirty = true;
@@ -2704,10 +2716,7 @@ class AstroSession {
       const key = this.#ensureSessionID();
       let serialized;
       try {
-        serialized = stringify$2(data, {
-          // Support URL objects
-          URL: (val) => val instanceof URL && val.href
-        });
+        serialized = stringify$1(data);
       } catch (err) {
         throw new AstroError(
           {
@@ -2764,10 +2773,7 @@ class AstroSession {
       return this.#data;
     }
     try {
-      const storedMap = unflatten(raw, {
-        // Revive URL objects
-        URL: (href) => new URL(href)
-      });
+      const storedMap = unflatten(raw);
       if (!(storedMap instanceof Map)) {
         await this.#destroySafe();
         throw new AstroError({
@@ -3727,7 +3733,7 @@ class App {
       this.#logger.error(null, err.stack || err.message || String(err));
       return this.#renderError(request, { locals, status: 500, error: err, clientAddress });
     } finally {
-      session?.[PERSIST_SYMBOL]();
+      await session?.[PERSIST_SYMBOL]();
     }
     if (REROUTABLE_STATUS_CODES.includes(response.status) && response.headers.get(REROUTE_DIRECTIVE_HEADER) !== "no") {
       return this.#renderError(request, {
@@ -3822,7 +3828,7 @@ class App {
           });
         }
       } finally {
-        session?.[PERSIST_SYMBOL]();
+        await session?.[PERSIST_SYMBOL]();
       }
     }
     const response = this.#mergeResponses(new Response(null, { status }), originalResponse);

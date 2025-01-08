@@ -1,5 +1,5 @@
 import { i as isRemotePath, j as joinPaths } from './path_I7weJv-K.mjs';
-import { A as AstroError, E as ExpectedImage, L as LocalImageUsedWrongly, o as MissingImageDimension, p as UnsupportedImageFormat, I as IncompatibleDescriptorOptions, q as UnsupportedImageConversion, s as NoImageMetadata, F as FailedToFetchRemoteImageDimensions, t as ExpectedImageOptions, v as ExpectedNotESMImage, w as InvalidImageService, x as toStyleString, c as createComponent, y as ImageMissingAlt, r as renderTemplate, m as maybeRenderHead, d as addAttribute, z as spreadAttributes, b as createAstro } from './astro/server_BLDN4tx6.mjs';
+import { A as AstroError, E as ExpectedImage, L as LocalImageUsedWrongly, o as MissingImageDimension, p as UnsupportedImageFormat, I as IncompatibleDescriptorOptions, q as UnsupportedImageConversion, s as NoImageMetadata, F as FailedToFetchRemoteImageDimensions, t as ExpectedImageOptions, v as ExpectedNotESMImage, w as InvalidImageService, x as toStyleString, c as createComponent, y as ImageMissingAlt, r as renderTemplate, m as maybeRenderHead, d as addAttribute, z as spreadAttributes, b as createAstro } from './astro/server_DB_Sk72R.mjs';
 import { D as DEFAULT_HASH_PROPS, a as VALID_SUPPORTED_FORMATS, b as DEFAULT_OUTPUT_FORMAT } from './consts_CJVA2lEV.mjs';
 /* empty css                           */
 
@@ -1219,7 +1219,7 @@ async function getConfiguredImageService() {
   if (!globalThis?.astroAsset?.imageService) {
     const { default: service } = await import(
       // @ts-expect-error
-      './sharp_CrZnM0Ia.mjs'
+      './sharp_Z_n4Ez8z.mjs'
     ).catch((e) => {
       const error = new AstroError(InvalidImageService);
       error.cause = e;
@@ -1415,7 +1415,7 @@ const $$Image = createComponent(async ($$result, $$props, $$slots) => {
     additionalAttributes
   }) : { ...additionalAttributes, ...image.attributes };
   return renderTemplate`${maybeRenderHead()}<img${addAttribute(image.src, "src")}${spreadAttributes(attributes)}${addAttribute(className, "class")}>`;
-}, "C:/Users/juanm/OneDrive/Desktop/Learning_Traine/Astro/dev-books Astro 5.0/node_modules/.pnpm/astro@5.1.2_jiti@1.21.7_rollup@4.29.2_typescript@5.7.2_yaml@2.7.0/node_modules/astro/components/Image.astro", void 0);
+}, "C:/Users/juanm/OneDrive/Desktop/Learning_Traine/Astro/dev-books Astro 5.0/node_modules/.pnpm/astro@5.1.3_jiti@1.21.7_rollup@4.29.2_typescript@5.7.2_yaml@2.7.0/node_modules/astro/components/Image.astro", void 0);
 
 const mimes = {
   "3g2": "video/3gpp2",
@@ -1931,7 +1931,7 @@ const $$Picture = createComponent(async ($$result, $$props, $$slots) => {
     const srcsetAttribute = props.densities || !props.densities && !props.widths && !useResponsive ? `${image.src}${image.srcSet.values.length > 0 ? ", " + image.srcSet.attribute : ""}` : image.srcSet.attribute;
     return renderTemplate`<source${addAttribute(srcsetAttribute, "srcset")}${addAttribute(lookup(image.options.format ?? image.src) ?? `image/${image.options.format}`, "type")}${spreadAttributes(sourceAdditionalAttributes)}>`;
   })}  <img${addAttribute(fallbackImage.src, "src")}${spreadAttributes(attributes)}${addAttribute(className, "class")}> </picture>`;
-}, "C:/Users/juanm/OneDrive/Desktop/Learning_Traine/Astro/dev-books Astro 5.0/node_modules/.pnpm/astro@5.1.2_jiti@1.21.7_rollup@4.29.2_typescript@5.7.2_yaml@2.7.0/node_modules/astro/components/Picture.astro", void 0);
+}, "C:/Users/juanm/OneDrive/Desktop/Learning_Traine/Astro/dev-books Astro 5.0/node_modules/.pnpm/astro@5.1.3_jiti@1.21.7_rollup@4.29.2_typescript@5.7.2_yaml@2.7.0/node_modules/astro/components/Picture.astro", void 0);
 
 const imageConfig = {"endpoint":{"route":"/_image"},"service":{"entrypoint":"astro/assets/services/sharp","config":{}},"domains":[],"remotePatterns":[],"experimentalResponsiveImages":false};
 					const getImage = async (options) => await getImage$1(options, imageConfig);
